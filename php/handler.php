@@ -1,10 +1,10 @@
 <?php
 parse_str($_POST['orderlist'], $orderlist);
 parse_str($_POST['userdata'], $userdata);
-
-// $orderlist - массив со списком заказа
-// $userdata - данные заказчика
-
+/*
+$orderlist - массив со списком заказа
+$userdata - данные заказчика
+*/
 
 // При желании, можно посмотреть полученные данные, записав их в файл:
 // file_put_contents('cart_data_log.txt', var_export($orderlist, 1) . "\r\n");
@@ -14,7 +14,7 @@ parse_str($_POST['userdata'], $userdata);
 // Заголовок письма
 $subject = 'Заказ от '.date('d.m.Y').'г.';
 // ваш Email
-$admin_mail = 'samsonov.guv.d@gmail.com';
+$admin_mail = 'admin@best-shop.piva.net';
 // Email заказчика (как fallback - ваш же Email)
 $to = !empty($userdata['user_mail']) ? $userdata['user_mail'] : $admin_mail;
 
@@ -76,11 +76,11 @@ $headers[] = 'X-Mailer: PHP/'.phpversion();
 // Отправка
 $send_ok = mail($to, $subject, $body, implode("\r\n", $headers));
 
-// Ответ на запрос
-// $response = [
-// 	'errors' => !$send_ok,
-// 	'message' => $send_ok ? 'Заказ принят в обработку!' : 'Хьюстон! У нас проблемы!'
-// ];
+ Ответ на запрос
+$response = [
+	'errors' => !$send_ok,
+	'message' => $send_ok ? 'Заказ принят в обработку!' : 'Хьюстон! У нас проблемы!'
+];
 // ! Для версий PHP < 5.4 использовать традиционный синтаксис инициализации массивов:
 
 $response = array (

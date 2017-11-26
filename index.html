@@ -1,128 +1,32 @@
-<!DOCTYPE html>
-<html lang="en">
+<!doctype html>
+<html>
 <head>
-    <meta charset="UTF-8">
-    <title>Store</title>
-    <link rel="stylesheet" type="text/css" href="slick/slick.css"/>
-    <link rel="stylesheet" type="text/css" href="slick/slick-theme.css"/>
-    <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css?family=Comfortaa:700" rel="stylesheet">
-    <link href="css/jqcart.css" rel="stylesheet" type="text/css">
-    <link rel="stylesheet" href="css/style.css">
-    <link rel="stylesheet" href="css/reset.css">
-    
+<meta charset="utf-8">
+<title>Документ без названия</title>
+<link href="css/jqcart.css" rel="stylesheet" type="text/css">
+<link rel="stylesheet" href="css/style.css">
+<script src="js/jquery-1.11.3.min.js"></script>
+<script src="js/jqcart.min.js"></script>
+<script src="js/js.js"></script>
 </head>
 <body>
-             <section id="ajax">
 
-             </section>
-              <section class="bg_fons">
-        <div><img src="img/slider/IMG_20170720_231905.jpg" alt=""></div>
-        <div><img src="img/slider/IMG_20170720_232220.jpg" alt=""></div>
-        <div><img src="img/slider/IMG_20170720_224233.jpg" alt=""></div>
-        <div><img src="img/slider/IMG_20170720_225005.jpg" alt=""></div>
-        <div><img src="img/slider/IMG_20170720_225435.jpg" alt=""></div>
-        <div><img src="img/slider/IMG_20170720_225924.jpg" alt=""></div>
-        <div><img src="img/slider/IMG_20170720_230502.jpg" alt=""></div>
-        <div><img src="img/slider/IMG_20170720_231240.jpg" alt=""></div>
-        <div><img src="img/slider/IMG_20170720_231905.jpg" alt=""></div>
-        <div><img src="img/slider/IMG_20170720_232220.jpg" alt=""></div>
-        <div><img src="img/slider/IMG_20170720_232510.jpg" alt=""></div>
-        <div><img src="img/slider/IMG_20170720_233110.jpg" alt=""></div>
-        <div><img src="img/slider/IMG_20170720_233253.jpg" alt=""></div>
-            </section>
+  <div class="menu">
+    <h1>menu</h1>
+      <div class="label-place"></div>
+   </div>
+   <div class="contentmenu">
+    <ul>
+     <li><a class="filterall" href="#_1">all</a></li>
+     <li><a class="filterwork" href="#_2">work</a></li>
+     <li><a class="filterany" href="#_3">any</a></li>
+    </ul>
+   </div>
+   <div class="content" id="content">
+    
+   </div>
    
-    <div class="header" >
-       <button class="clear_bay" id="clear">Очистить корзину</button>
-       <button id="load" onclick="sendAJAX()">ajax</button>
-        <div class="label-place"></div>
-    </div>
-   <section class="slide_menu">
-    <div class="slick_slider">
-        <div><img src="img/slider/IMG_20170720_224233.jpg" alt=""></div>
-        <div><img src="img/slider/IMG_20170720_225005.jpg" alt=""></div>
-        <div><img src="img/slider/IMG_20170720_225435.jpg" alt=""></div>
-        <div><img src="img/slider/IMG_20170720_225924.jpg" alt=""></div>
-        <div><img src="img/slider/IMG_20170720_230502.jpg" alt=""></div>
-        <div><img src="img/slider/IMG_20170720_231240.jpg" alt=""></div>
-        <div><img src="img/slider/IMG_20170720_231905.jpg" alt=""></div>
-        <div><img src="img/slider/IMG_20170720_232220.jpg" alt=""></div>
-        <div><img src="img/slider/IMG_20170720_232510.jpg" alt=""></div>
-        <div><img src="img/slider/IMG_20170720_233110.jpg" alt=""></div>
-        <div><img src="img/slider/IMG_20170720_233253.jpg" alt=""></div>
-        <div><img src="img/slider/IMG_20170720_233446.jpg" alt=""></div>
-        <div><img src="img/slider/IMG_20170720_233621.jpg" alt=""></div>
-        <div><img src="img/slider/IMG_20170720_233815.jpg" alt=""></div>
-        <div><img src="img/slider/IMG_20170723_115351.jpg" alt=""></div>
-        <div><img src="img/slider/IMG_20170723_121904.jpg" alt=""></div>
-               
-    </div>
-
-        <h1 class="content_title">То что нужно покупателю</h1>
-        
-       <div class="content">
-
-           <div class="product">
-               <div class="product-img">
-                   <img class="product-bg" src="img/hg1.jpg" alt="">
-                   <img class="product-logo" src="img/icon_zoom.png" alt="">
-               </div>
-               <div class="product-price">
-                  <h6>Название товара</h6>
-                   <span>Цена: 100грн.</span>
-                    <div class="product-button">
-                    <button class="add_item button7" data-id="7" data-title="my" data-price="100" data-img="img/slider/IMG_20170723_121904.jpg">В корзину</button>
-                    <button id="open" class="button7">Открыть корзину</button>
-                    </div>
-                    
-               </div>
-           </div>
-           
-           <div class="product"></div>
-           <div class="product"></div>
-           <div class="product"></div>
-           <div class="product"></div>
-           <div class="product"></div>
-           <div class="product"></div>
-           <div class="product"></div>
-           <div class="product"></div>
-       </div>
-   </section>
-   <section class="bg_fons">
-        <div><img src="img/slider/IMG_20170720_231905.jpg" alt=""></div>
-        <div><img src="img/slider/IMG_20170720_232220.jpg" alt=""></div>
-   </section>
-   
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-    <script src="js/jquery-1.11.3.min.js"></script>
-    <script type="text/javascript" src="slick/slick.min.js"></script>
-    <script src="js/developer/jqcart.js"></script>
-    <script src="js/js.js"></script>
-    
-    
-    <script>
-        var xhr = new XMLHttpRequest();
-        
-        xhr.onreadystatechange = function(){
-            if(xhr.readyState === 4){
-            document.getElementById("ajax").innerHTML = xhr.responseText;
-                
-            }
-        }
-        
-        xhr.open("GET", "photo.html");
-        function sendAJAX(){
-               xhr.send();
-            document.getElementById("load").style.display="none";
-        };
-        
-        
-        $(function(){
-            $('.photolabexid').click(function(){
-                $('.ajax').empty();
-            });
-        });
-    </script>
-    
+  <button id="clear">Очистить корзину (вызов метода clearCart)</button>
+  <button id="open">Открыть корзину (вызов метода openCart)</button>
 </body>
 </html>

@@ -1,62 +1,72 @@
-$('.slick_slider').slick({
-    infinite: true,
-    adaptiveHeight: true,
-    autoplay: true,
-    autoplaySpeed: 2700,
-    arrows: true,
-    draggable: false,
-    fade: true,
-    pauseOnHover: false,
-    edgeFriction: 0.1,
-    
-});
-$('.bg_fons').slick({
-    infinite: true,
-    adaptiveHeight: true,
-    autoplay: true,
-    autoplaySpeed: 2700,
-    arrows: false,
-    draggable: false,
-    fade: true,
-    pauseOnHover: false,
-    edgeFriction: 0.1,
-    
-});
- $('.photo_g').slick({
-  asNavFor: '.photo_n',
-     cssEase:'ease-in',
-     initialSlide: 3,
-     autoplay: true,
-     autoplaySpeed: 2000
-});
-$('.photo_n').slick({
-    slidesToShow: 3,
-    centerMode: true,
-    centerPadding: '190px',
-  asNavFor: '.photo_g',
-    focusOnSelect: true,
-    arrows: false,
-  dots: true,
+$(function() {
+    $.ajax({
+        type: 'GET',
+        url: 'filterContent.html',
+        cache: false,
+        success: function(html){
+            $('#content').append(html);
+        }
+    });
+
+$('.filterwork').click(function(){
+       $.ajax({
+           type: 'GET',
+           url: 'filterContent2.html',
+           cache: false,
+           success: function(html){
+               $('#content').empty();
+               $('#content').append(html);
+           }
+       });
 });
 
-        $(function() {
-    'use strict';
-    // инициализация плагина
-    $.jqCart({
-        buttons: '.add_item',        // селектор кнопок, аля "Добавить в корзину"
-        handler: '/php/handler.php', // путь к обработчику
-        visibleLabel: true,         // показывать/скрывать ярлык при пустой корзине (по умолчанию: false)
-        openByAdding: false,         // автоматически открывать корзину при добавлении товара (по умолчанию: false)
-        currency: '&euro;',          // валюта: строковое значение, мнемоники (по умолчанию "$")
-        cartLabel: '.label-place'    /* селектор элемента, где будет размещен ярлык, 
-                                        он же - "кнопка" для открытия корзины */
-    });
-    
-    // дополнительные методы
-   $('#open').click(function(){
-                $.jqCart('openCart'); // открыть корзину
-        });
-        $('#clear').click(function(){
-                $.jqCart('clearCart'); // очистить корзину
-        });   
+
+$('.filterany').click(function(){
+       $.ajax({
+            type: 'GET',
+            url: 'filterContent3.html',
+            cache: false,
+            success: function(html){
+                $('#content').empty();
+                $('#content').append(html);
+            }
+       });
 });
+
+
+$('.filterall').click(function(){
+    $.ajax({
+        type: 'GET',
+        url: 'filterContent.html',
+        cache: false,
+        success: function(html){
+            $('#content').empty();
+            $('#content').append(html);
+        }
+    });
+});
+
+});
+
+
+$(function(){
+  'use strict'; 
+  // инициализация плагина
+  $.jqCart({
+      buttons: '.add_item',
+      handler: './php/handler.php',
+      cartLabel: '.label-place',
+      visibleLabel: true,
+      openByAdding: false,
+      currency: '&euro;'
+  }); 
+  // Пример с дополнительными методами
+  $('#open').click(function(){
+    $.jqCart('openCart'); // открыть корзину
+  });
+  $('#clear').click(function(){
+    $.jqCart('clearCart'); // очистить корзину
+  }); 
+});
+
+
